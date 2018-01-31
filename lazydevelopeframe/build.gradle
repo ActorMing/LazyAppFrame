@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.ActorMing'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    // fastJson
+    // https://github.com/alibaba/fastjson
+    compile 'com.alibaba:fastjson:1.1.67.android'
+
+    // RxJava & RxAndroid
+    // https://github.com/ReactiveX/RxAndroid
+    compile 'io.reactivex.rxjava2:rxjava:2.1.8'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    // Retrofit
+    // https://github.com/square/retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+
+    // retrofit json 转换器 fastJson
+    // http://blog.csdn.net/soslinken/article/details/50832958
+    compile 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
+
+    // retrofit 配合 RxJava 使用
+    // https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    // 字符串装换工厂
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+
+    // OkHttpInterceptor
+    // https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+
+    /** *                             Dagger2 依赖                      ***/
+    // https://github.com/google/dagger
+    compile 'com.google.dagger:dagger:2.14.1'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
+
+    // RxTool
+    // https://github.com/vondear/RxTools
+    compile 'com.github.vondear:RxTools:v1.7.6.4'
+
+    // Alerter
+    // https://github.com/Tapadoo/Alerter
+    compile 'com.tapadoo.android:alerter:2.0.4'
+}
