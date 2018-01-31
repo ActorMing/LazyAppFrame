@@ -31,18 +31,18 @@ android 快速开发框架
 
 ##### 基本指令区
 
-   -optimizationpasses 5<br/>
-   -dontusemixedcaseclassnames<br/>
--dontskipnonpubliclibraryclasses<br/>
--dontskipnonpubliclibraryclassmembers<br/>
--dontpreverify<br/>
--verbose<br/>
--ignorewarning<br/>
--printmapping proguardMapping.txt<br/>
--optimizations !code/simplification/cast,!field/*,!class/merging/*<br/>
--keepattributes *Annotation*,InnerClasses<br/>
--keepattributes Signature<br/>
--keepattributes SourceFile,LineNumberTable<br/>
+    -optimizationpasses 5
+    -dontusemixedcaseclassnames
+    -dontskipnonpubliclibraryclasses
+    -dontskipnonpubliclibraryclassmembers
+    -dontpreverify
+    -verbose
+    -ignorewarning
+    -printmapping proguardMapping.txt
+    -optimizations !code/simplification/cast,!field/*,!class/merging/*
+    -keepattributes *Annotation*,InnerClasses
+    -keepattributes Signature
+    -keepattributes SourceFile,LineNumberTable
 
 ##### 默认保留区
 
