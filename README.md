@@ -2,7 +2,8 @@
 android 快速开发框架
 该框引用了以下库<br/>
 [Dagger2](https://github.com/google/dagger "Dagger2")、[RxTools](https://github.com/vondear/RxTools "工具类集合")、
-[Alerter](https://github.com/Tapadoo/Alerter "顶部alert提示")
+[Alerter](https://github.com/Tapadoo/Alerter "顶部alert提示")、[fastjson](https://github.com/alibaba/fastjson "解析json数据")、
+[RxAndroid](https://github.com/ReactiveX/RxAndroid)<br/>[Retrofit](https://github.com/square/retrofit)、
 
 ## How to use
 ### To get a Git project into your build
