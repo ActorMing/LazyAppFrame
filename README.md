@@ -6,10 +6,10 @@ android 快速开发框架
 [RxAndroid](https://github.com/ReactiveX/RxAndroid "一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库")
 <br/>[Retrofit](https://github.com/square/retrofit "一个针对Android和Java类型安全的http客户端")、[retrofit-converter-fastjson](https://github.com/ligboy/retrofit-converter-fastjson "retrofit json 转换适配器") 、[retrofit-adapters-rxjava2](https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2 "retrofit对rxjava 的支持")、converter-scalars字符串转换适配器、[OkHttpInterceptor](https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor "okHttp 拦截器")
 
-## How to use
-### To get a Git project into your build
-#### Step 1. Add the JitPack repository to your build file
-    Add it in your root build.gradle at the end of repositories:
+## 怎样使用
+### 在你的项目中进行构建
+#### 第一步. 添加 JitPack 仓库到你的配置文件中
+    在你的根 build.gradle 的进行添加:
     
     allprojects {
 	  repositories {
@@ -18,9 +18,9 @@ android 快速开发框架
 	  }
      }
 
-#### Step 2. Add the dependency
+#### 第二步.添加这个引用 (版本号可在 release 中查找最新版本进行替换)
      dependencies {
-     		compile 'com.github.ActorMing:LazyAppFrame:v1.0.0'
+     		compile 'com.github.ActorMing:LazyAppFrame:v1.0.5'
      }
 
 ### 在项目中的应用
