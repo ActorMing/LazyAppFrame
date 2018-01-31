@@ -7,14 +7,13 @@ android 快速开发框架
     Add it in your root build.gradle at the end of repositories:
     
     allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+	 repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	 }
+     }
 
 #### Step 2. Add the dependency
-
-  dependencies {
-	        compile 'com.github.ActorMing:LazyAppFrame:v1.0.0'
-	}
+     dependencies {
+     		compile 'com.github.ActorMing:LazyAppFrame:v1.0.0'
+     }
