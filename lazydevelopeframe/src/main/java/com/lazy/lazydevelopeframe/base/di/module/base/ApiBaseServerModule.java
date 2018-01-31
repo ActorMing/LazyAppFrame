@@ -105,7 +105,7 @@ public class ApiBaseServerModule {
                             .header("Cache-Control", "public, max-age=" + maxAge)
                             .build();
                 }
-                return chain.proceed(request);
+                return response;
             }
         };
     }
