@@ -1,5 +1,6 @@
 # LazyAppFrame
 android 快速开发框架
+该框架集成了 [Dagger2](https://github.com/google/dagger "Dagger2")、RxTools、Alerter
 
 ## How to use
 ### To get a Git project into your build
