@@ -24,9 +24,48 @@ android 快速开发框架
      }
 
 ### 在项目中的应用
-
+##### 在Application中进行初始化
+	
 
 #### 代码混淆
+    // Retrofit 相关配置
+    LazyConfig.init()
+               .init(this)
+               .setBaseHttpUrl("https://www.baidu.com") // 必须要进行设置的 baseUrl
+               .setCacheFileName("cacheFileName") // 缓存文件名称 非必填(默认:okHttpCacheFile)
+               .setCacheFileSize(10 * 1024 * 1024) // 缓存文件大小 非必填 (默认:10MB)
+               .setConnTimeout(15) // 连接超时时间 非必填 (默认:15s)
+               .setReadTimeout(15) // 读取超时时间 非必填 (默认:15s)
+               .setWriteTimeout(15) // 写入超时时间 非必填 (默认:15s)
+               .setHttpRetry(false) // 重试 非必填 (默认:false)
+               .setResponseOk(200); // 返回正确的状态码 非必填 (默认:200)
+
+    // 异常提示配置 (所有的提示语都有默认值,可以自行选择配置)
+    LazyExceptionTipConfig.init()
+    	        .setInvalidNetWork("请检查网络是否连接")
+                .setBadRequest("错误的请求")
+                .setUnauthorized("未授权的请求")
+                .setForbidden("禁止访问")
+                .setNotFound("服务器地址未找到")
+                .setRequestTimeout("请求超时,请稍后重试")
+                .setGatewayTimeout("网关响应超时")
+                .setInternalServerError("服务器内部异常")
+                .setBadGateway("无效的请求")
+                .setServiceUnavailable("服务器不可用")
+                .setAccessDenied("拒绝访问")
+                .setHandelError("接口处理失败")
+                .setUnknownError("位置错误")
+                .setParseError("数据解析错误")
+                .setConnError("连接失败")
+                .setSslError("证书验证失败")
+                .setSslNotFound("证书路径未找到")
+                .setSslInvalid("证书无效")
+                .setConnTimeout("连接超时")
+                .setSocketTimeout("连接超时")
+                .setClassCast("类型转换错误")
+                .setNullPoint("空数据")
+                .setUnknownHostname("服务器地址未找到,请检查网络或url")
+                .setNetworkOnMain("耗时操作不允许放在主线程中");
 
 ##### 基本指令区
 
