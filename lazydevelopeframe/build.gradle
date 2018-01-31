@@ -26,6 +26,17 @@ android {
 
 }
 
+// 指定编码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+// 打包源码
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -49,6 +60,7 @@ dependencies {
 
     // retrofit json 转换器 fastJson
     // http://blog.csdn.net/soslinken/article/details/50832958
+    // https://github.com/ligboy/retrofit-converter-fastjson
     compile 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
 
     // retrofit 配合 RxJava 使用
