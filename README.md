@@ -31,8 +31,8 @@ android 快速开发框架
 
 ##### 基本指令区
 
-	-optimizationpasses 5 <br/>
-	-dontusemixedcaseclassnames<br/>
+   -optimizationpasses 5<br/>
+   -dontusemixedcaseclassnames<br/>
 -dontskipnonpubliclibraryclasses<br/>
 -dontskipnonpubliclibraryclassmembers<br/>
 -dontpreverify<br/>
