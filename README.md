@@ -9,7 +9,7 @@ android 快速开发框架
 ## 怎样使用
 ### 在你的项目中进行构建
 #### 第一步. 添加 JitPack 仓库到你的配置文件中
-    在你的根 build.gradle 的进行添加:
+    在你 Project 的 build.gradle 的进行添加:
     
     allprojects {
 	  repositories {
