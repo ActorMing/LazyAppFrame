@@ -25,10 +25,7 @@ android 快速开发框架
 
 ### 在项目中的应用
 ##### 在Application中进行初始化
-	
-
-#### 代码混淆
-    // Retrofit 相关配置
+    // Retrofit 相关配置 (可自行选择配置或继续使用默认配置)
     LazyConfig.init()
                .init(this)
                .setBaseHttpUrl("https://www.baidu.com") // 必须要进行设置的 baseUrl
@@ -67,6 +64,7 @@ android 快速开发框架
                 .setUnknownHostname("服务器地址未找到,请检查网络或url")
                 .setNetworkOnMain("耗时操作不允许放在主线程中");
 
+#### 代码混淆
 ##### 基本指令区
 
     -optimizationpasses 5
