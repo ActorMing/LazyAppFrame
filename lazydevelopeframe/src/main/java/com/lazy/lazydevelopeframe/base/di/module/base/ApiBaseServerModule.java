@@ -82,7 +82,7 @@ public class ApiBaseServerModule {
     @NetWork
     @Provides
     @Singleton
-    Interceptor providerNetWorkInterceptor(@ScopeApp final Context context) {
+    Interceptor providerNetWorkInterceptor(final Context context) {
         return new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
@@ -254,7 +254,7 @@ public class ApiBaseServerModule {
         if (TextUtils.isEmpty(LazyConfig.get().getBaseHttpUrl())) {
             throw new NullPointerException("baseUrl can not null");
         }
-        builder.baseUrl(LazyConfig.get().getCacheFileName());
+        builder.baseUrl(LazyConfig.get().getBaseHttpUrl());
         builder.client(okHttpClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(ScalarsConverterFactory.create())

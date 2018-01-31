@@ -1,5 +1,7 @@
 package com.lazy.lazydevelopeframe.base.config;
 
+import android.support.annotation.NonNull;
+
 /**
  * <pre>
  *  author : liming
@@ -54,122 +56,122 @@ public class LazyExceptionTipConfig {
     private String unknownHostname = "服务器地址未找到,请检查网络或url";
     private String networkOnMain = "耗时操作不允许放在主线程中";
 
-    public LazyExceptionTipConfig setInvalidNetWork(String invalidNetWork) {
+    public LazyExceptionTipConfig setInvalidNetWork(@NonNull String invalidNetWork) {
         this.internalServerError = invalidNetWork;
         return this;
     }
 
-    public LazyExceptionTipConfig setUnauthorized(String unauthorized) {
+    public LazyExceptionTipConfig setUnauthorized(@NonNull String unauthorized) {
         this.unauthorized = unauthorized;
         return this;
     }
 
-    public LazyExceptionTipConfig setBadRequest(String badRequest) {
+    public LazyExceptionTipConfig setBadRequest(@NonNull String badRequest) {
         this.badRequest = badGateway;
         return this;
     }
 
-    public LazyExceptionTipConfig setForbidden(String forbidden) {
+    public LazyExceptionTipConfig setForbidden(@NonNull String forbidden) {
         this.forbidden = forbidden;
         return this;
     }
 
-    public LazyExceptionTipConfig setNotFound(String notFound) {
+    public LazyExceptionTipConfig setNotFound(@NonNull String notFound) {
         this.notFound = notFound;
         return this;
     }
 
-    public LazyExceptionTipConfig setRequestTimeout(String requestTimeout) {
+    public LazyExceptionTipConfig setRequestTimeout(@NonNull String requestTimeout) {
         this.requestTimeout = requestTimeout;
         return this;
     }
 
-    public LazyExceptionTipConfig setGatewayTimeout(String gatewayTimeout) {
+    public LazyExceptionTipConfig setGatewayTimeout(@NonNull String gatewayTimeout) {
         this.gatewayTimeout = gatewayTimeout;
         return this;
     }
 
-    public LazyExceptionTipConfig setInternalServerError(String internalServerError) {
+    public LazyExceptionTipConfig setInternalServerError(@NonNull String internalServerError) {
         this.internalServerError = internalServerError;
         return this;
     }
 
-    public LazyExceptionTipConfig setBadGateway(String badGateway) {
+    public LazyExceptionTipConfig setBadGateway(@NonNull String badGateway) {
         this.badGateway = badGateway;
         return this;
     }
 
-    public LazyExceptionTipConfig setServiceUnavailable(String serviceUnavailable) {
+    public LazyExceptionTipConfig setServiceUnavailable(@NonNull String serviceUnavailable) {
         this.serviceUnavailable = serviceUnavailable;
         return this;
     }
 
-    public LazyExceptionTipConfig setAccessDenied(String accessDenied) {
+    public LazyExceptionTipConfig setAccessDenied(@NonNull String accessDenied) {
         this.accessDenied = accessDenied;
         return this;
     }
 
-    public LazyExceptionTipConfig setHandelError(String handelError) {
+    public LazyExceptionTipConfig setHandelError(@NonNull String handelError) {
         this.handelError = handelError;
         return this;
     }
 
-    public LazyExceptionTipConfig setUnknownError(String unknownError) {
+    public LazyExceptionTipConfig setUnknownError(@NonNull String unknownError) {
         this.unknownError = unknownError;
         return this;
     }
 
-    public LazyExceptionTipConfig setParseError(String parseError) {
+    public LazyExceptionTipConfig setParseError(@NonNull String parseError) {
         this.parseError = parseError;
         return this;
     }
 
-    public LazyExceptionTipConfig setConnError(String connError) {
+    public LazyExceptionTipConfig setConnError(@NonNull String connError) {
         this.connError = connError;
         return this;
     }
 
-    public LazyExceptionTipConfig setSslError(String sslError) {
+    public LazyExceptionTipConfig setSslError(@NonNull String sslError) {
         this.sslError = sslError;
         return this;
     }
 
-    public LazyExceptionTipConfig setSslNotFound(String sslNotFound) {
+    public LazyExceptionTipConfig setSslNotFound(@NonNull String sslNotFound) {
         this.sslNotFound = sslNotFound;
         return this;
     }
 
-    public LazyExceptionTipConfig setSslInvalid(String sslInvalid) {
+    public LazyExceptionTipConfig setSslInvalid(@NonNull String sslInvalid) {
         this.sslInvalid = sslInvalid;
         return this;
     }
 
-    public LazyExceptionTipConfig setConnTimeout(String connTimeout) {
+    public LazyExceptionTipConfig setConnTimeout(@NonNull String connTimeout) {
         this.connTimeout = connTimeout;
         return this;
     }
 
-    public LazyExceptionTipConfig setSocketTimeout(String socketTimeout) {
+    public LazyExceptionTipConfig setSocketTimeout(@NonNull String socketTimeout) {
         this.socketTimeout = socketTimeout;
         return this;
     }
 
-    public LazyExceptionTipConfig setClassCast(String classCast) {
+    public LazyExceptionTipConfig setClassCast(@NonNull String classCast) {
         this.classCast = classCast;
         return this;
     }
 
-    public LazyExceptionTipConfig setNullPoint(String nullPoint) {
+    public LazyExceptionTipConfig setNullPoint(@NonNull String nullPoint) {
         this.nullPoint = nullPoint;
         return this;
     }
 
-    public LazyExceptionTipConfig setUnknownHostname(String unknownHostname) {
+    public LazyExceptionTipConfig setUnknownHostname(@NonNull String unknownHostname) {
         this.unknownHostname = unknownHostname;
         return this;
     }
 
-    public LazyExceptionTipConfig setNetworkOnMain(String networkOnMain) {
+    public LazyExceptionTipConfig setNetworkOnMain(@NonNull String networkOnMain) {
         this.networkOnMain = networkOnMain;
         return this;
     }
