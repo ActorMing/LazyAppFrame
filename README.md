@@ -19,7 +19,8 @@ android 快速开发框架
      }
 
 #### 第二步.添加这个引用 (版本号可在 release 中查找最新版本进行替换)
-    2. 然后在 build.gradle(Module:app) 的 dependencies 添加 [点击这里](https://github.com/ActorMing/LazyAppFrame/releases "查看最新版本"):
+######[点击这里](https://github.com/ActorMing/LazyAppFrame/releases "查看最新版本")
+    2. 然后在 build.gradle(Module:app) 的 dependencies 添加:
 	
      dependencies {
      		compile 'com.github.ActorMing:LazyAppFrame:$lastestVersion'
