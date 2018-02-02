@@ -24,13 +24,13 @@ public class LazyConfig {
     private long readTimeout = 15;
     private long writeTimeout = 15;
     private boolean httpRetry = false;
-    private boolean ignoreAllSSL = false;
+    private boolean ignoreSSL = true;
     private boolean receiveAllHostname = true;
     private String[] supportHostnameArray; // 支持的 hostname 数组
     private int[] certificates; // 证书
-    private int responseOk = 200;
     private String sslProtocolType = "TLS"; // 证书协议类型
     private String certificateType = "X.509"; // 证书类型
+    private int responseOk = 200;
 
     private LazyConfig() {
     }
@@ -81,8 +81,8 @@ public class LazyConfig {
         return this;
     }
 
-    public LazyConfig setIgnoreAllSSL(boolean ignoreAllSSL) {
-        this.ignoreAllSSL = ignoreAllSSL;
+    public LazyConfig setIgnoreSSL(boolean ignoreSSL) {
+        this.ignoreSSL = ignoreSSL;
         return this;
     }
 
@@ -163,8 +163,8 @@ public class LazyConfig {
         return responseOk;
     }
 
-    public boolean isIgnoreAllSSL() {
-        return ignoreAllSSL;
+    public boolean isIgnoreSSL() {
+        return ignoreSSL;
     }
 
     public boolean isReceiveAllHostname() {
@@ -206,7 +206,7 @@ public class LazyConfig {
                 ", readTimeout=" + readTimeout +
                 ", writeTimeout=" + writeTimeout +
                 ", httpRetry=" + httpRetry +
-                ", ignoreAllSSL=" + ignoreAllSSL +
+                ", ignoreSSL=" + ignoreSSL +
                 ", receiveAllHostname=" + receiveAllHostname +
                 ", supportHostnameArray=" + Arrays.toString(supportHostnameArray) +
                 ", certificates=" + Arrays.toString(certificates) +

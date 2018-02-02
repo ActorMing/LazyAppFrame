@@ -9,7 +9,6 @@ import com.lazy.lazydevelopeframe.base.config.LazyConfig;
 import com.lazy.lazydevelopeframe.base.di.annotation.NetWork;
 import com.lazy.lazydevelopeframe.base.di.annotation.NoNetWork;
 import com.lazy.lazydevelopeframe.base.di.annotation.ScopeApp;
-import com.lazy.lazydevelopeframe.base.di.annotation.SupportAllSSL;
 import com.vondear.rxtools.RxNetTool;
 
 import java.io.File;
@@ -149,7 +148,6 @@ public class ApiBaseServerModule {
 
 
     // 信任所有的 SSL 签名
-    @SupportAllSSL
     @Provides
     @Singleton
     SSLSocketFactory providerSSLSocketFactory() {
@@ -210,7 +208,7 @@ public class ApiBaseServerModule {
                                       @ScopeApp Context context,
                                       @NetWork Interceptor networkInterceptor,
                                       @NoNetWork Interceptor noNetWorkInterceptor,
-                                      @SupportAllSSL SSLSocketFactory sslSocketFactory,
+                                      SSLSocketFactory sslSocketFactory,
                                       HttpLoggingInterceptor httpLoggingInterceptor) {
         /**
          * 1. 设置连接超时时间
@@ -232,7 +230,7 @@ public class ApiBaseServerModule {
                 .cache(cache)
                 .retryOnConnectionFailure(LazyConfig.get().isHttpRetry());
 
-        if (LazyConfig.get().isIgnoreAllSSL()) {
+        if (LazyConfig.get().isIgnoreSSL()) {
             builder.sslSocketFactory(sslSocketFactory);
         } else {
             if (LazyConfig.get().getCertificates() != null && LazyConfig.get().getCertificates().length > 0) {
