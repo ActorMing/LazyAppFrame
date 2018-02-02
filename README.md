@@ -2,7 +2,7 @@
 android 快速开发框架 
 <br/>
 #### 注: 该库主要集成了 Dagger2 + Retrofit(OkHttp) + RxJava(RxAndroid) + mvp ,让开发者快速实现框架的搭建,并且对 Retrofit 请求网络可能出现的问题进行了统一处理,调用者只需要关心结果,而不需要关注过程.
-<br/>
+
 该框引用了以下库(相关库的文档可以点击下方的链接进行查看学习)<br/>
 [Dagger2](https://github.com/google/dagger "依赖注入框架配合mvp同时使用让整个项目耦合性更低,方便拓展")、[RxTools](https://github.com/vondear/RxTools "工具类集合")、
 [Alerter](https://github.com/Tapadoo/Alerter "顶部alert提示")、[fastjson](https://github.com/alibaba/fastjson "解析json数据")、
