@@ -4,7 +4,7 @@ android 快速开发框架
 该框引用了以下库(相关库的文档可以点击下方的链接进行查看学习)<br/>
 [Dagger2](https://github.com/google/dagger "依赖注入框架配合mvp同时使用让整个项目耦合性更低,方便拓展")、[RxTools](https://github.com/vondear/RxTools "工具类集合")、
 [Alerter](https://github.com/Tapadoo/Alerter "顶部alert提示")、[fastjson](https://github.com/alibaba/fastjson "解析json数据")、
-[RxAndroid](https://github.com/ReactiveX/RxAndroid "一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库")
+[RxAndroid](https://github.com/ReactiveX/RxAndroid "一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库")、[RxJava 是什么,不懂的点击这里](http://gank.io/post/560e15be2dca930e00da1083 "这里有详细介绍")
 
 ## 怎样使用
 ### 在你的项目中进行构建
