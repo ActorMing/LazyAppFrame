@@ -73,7 +73,7 @@ android 快速开发框架
                 .setServiceUnavailable("服务器不可用")
                 .setAccessDenied("拒绝访问")
                 .setHandelError("接口处理失败")
-                .setUnknownError("位置错误")
+                .setUnknownError("未知错误")
                 .setParseError("数据解析错误")
                 .setConnError("连接失败")
                 .setSslError("证书验证失败")
