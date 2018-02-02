@@ -49,7 +49,7 @@ android 快速开发框架
                  *  .setReceiveAllHostname(false)
                  *  .setSupportHostnameArray("https://www.baidu.com", "https://www.google.cn");
                  */
-		  // 这里选择接收所有的 hostname 则 supportHostname 不会启用
+		 // 这里选择接收所有的 hostname 则 supportHostname 不会启用
                 .setReceiveAllHostname(true) 
 		 // 支持的 hostnameArray (选择了之后只会支持该array中的hostname)
                 .setSupportHostnameArray("https://www.baidu.com", "https://www.google.cn") 
