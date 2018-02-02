@@ -9,7 +9,7 @@ android 快速开发框架
 ## 怎样使用
 ### 在你的项目中进行构建
 #### 第一步. 添加 JitPack 仓库到你的配置文件中
-    在你 Project 的 build.gradle 的进行添加:
+    1.先在 build.gradle(Project:XXXX) 的 repositories 添加:
     
     allprojects {
 	  repositories {
@@ -19,10 +19,10 @@ android 快速开发框架
      }
 
 #### 第二步.添加这个引用 (版本号可在 release 中查找最新版本进行替换)
-    在你 Module 的 build.gradle 中进行添加:
+    2. 然后在 build.gradle(Module:app) 的 dependencies 添加 [点击这里](https://github.com/ActorMing/LazyAppFrame/releases "查看最新版本"):
 	
      dependencies {
-     		compile 'com.github.ActorMing:LazyAppFrame:v1.0.5'
+     		compile 'com.github.ActorMing:LazyAppFrame:$lastestVersion'
      }
 
 ### 在项目中的应用
