@@ -1,8 +1,8 @@
 # LazyAppFrame
-android 快速开发框架 <br/>
-#### 注: 该框架使用使用了 Dagger2 + Mvp 
+android 快速开发框架 
 <br/>
 该框引用了以下库(相关库的文档可以点击下方的链接进行查看学习)<br/>
+[Dagger2](https://github.com/google/dagger "依赖注入框架配合mvp同时使用让整个项目耦合性更低,方便拓展")
 
 ## 怎样使用
 ### 在你的项目中进行构建
