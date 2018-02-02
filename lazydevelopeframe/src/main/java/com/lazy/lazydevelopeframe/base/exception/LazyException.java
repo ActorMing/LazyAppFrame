@@ -165,7 +165,14 @@ public class LazyException {
             return ex;
         } else {
             ex = new LazyThrowable(e, UNKNOWN);
-            ex.setMessage(LazyExceptionTipConfig.get().getUnknownError());
+
+            if (!TextUtils.isEmpty(e.getMessage())) {
+                ex.setMessage(e.getMessage());
+            } else if (!TextUtils.isEmpty(e.getLocalizedMessage())) {
+                ex.setMessage(e.getLocalizedMessage());
+            } else {
+                ex.setMessage(LazyExceptionTipConfig.get().getUnknownError());
+            }
             return ex;
         }
     }

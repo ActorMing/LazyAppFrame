@@ -2,6 +2,8 @@ package com.lazy.lazydevelopeframe.base.api;
 
 import android.content.Context;
 
+import com.lazy.lazydevelopeframe.base.config.LazyConfig;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyManagementException;
@@ -36,14 +38,14 @@ public class LazyHttpsFactory {
      * set SSLSocketFactory
      * {@link HostnameVerifier}
      */
-    protected static SSLSocketFactory getSSLSocketFactory(Context context, int[] certificates) {
+    public static SSLSocketFactory getSSLSocketFactory(Context context, int[] certificates) {
         if (context == null) {
             throw new NullPointerException("context == null");
         }
 
         CertificateFactory certificateFactory;
         try {
-            certificateFactory = CertificateFactory.getInstance("X.509");
+            certificateFactory = CertificateFactory.getInstance(LazyConfig.get().getCertificateType());
             KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
             keyStore.load(null, null);
 
@@ -55,7 +57,7 @@ public class LazyHttpsFactory {
                     certificate.close();
                 }
             }
-            SSLContext sslContext = SSLContext.getInstance("TLS");
+            SSLContext sslContext = SSLContext.getInstance(LazyConfig.get().getSslProtocolType());
             TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init(keyStore);
             sslContext.init(null, trustManagerFactory.getTrustManagers(), new SecureRandom());
@@ -79,7 +81,7 @@ public class LazyHttpsFactory {
      * set HostnameVerifier
      * {@link HostnameVerifier}
      */
-    protected static HostnameVerifier getHostnameVerifier(final String[] hostUrls) {
+    public static HostnameVerifier getHostnameVerifier(final String[] hostUrls) {
 
         HostnameVerifier TRUSTED_VERIFIER = new HostnameVerifier() {
 
@@ -101,7 +103,7 @@ public class LazyHttpsFactory {
      * set Pins
      * {@link HostnameVerifier}
      */
-    protected static String getPins(Context context, int certificate) {
+    public static String getPins(Context context, int certificate) {
 
         InputStream in = context.getResources().openRawResource(certificate);
 

@@ -4,10 +4,12 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.lazy.lazydevelopeframe.base.api.LazyHttpsFactory;
 import com.lazy.lazydevelopeframe.base.config.LazyConfig;
 import com.lazy.lazydevelopeframe.base.di.annotation.NetWork;
 import com.lazy.lazydevelopeframe.base.di.annotation.NoNetWork;
 import com.lazy.lazydevelopeframe.base.di.annotation.ScopeApp;
+import com.lazy.lazydevelopeframe.base.di.annotation.SupportAllSSL;
 import com.vondear.rxtools.RxNetTool;
 
 import java.io.File;
@@ -145,7 +147,9 @@ public class ApiBaseServerModule {
         };
     }
 
+
     // 信任所有的 SSL 签名
+    @SupportAllSSL
     @Provides
     @Singleton
     SSLSocketFactory providerSSLSocketFactory() {
@@ -202,8 +206,12 @@ public class ApiBaseServerModule {
      */
     @Provides
     @Singleton
-    OkHttpClient providerOkHttpClient(Cache cache, @NetWork Interceptor networkInterceptor, @NoNetWork Interceptor noNetWorkInterceptor
-            , SSLSocketFactory sslSocketFactory, HttpLoggingInterceptor httpLoggingInterceptor) {
+    OkHttpClient providerOkHttpClient(Cache cache,
+                                      @ScopeApp Context context,
+                                      @NetWork Interceptor networkInterceptor,
+                                      @NoNetWork Interceptor noNetWorkInterceptor,
+                                      @SupportAllSSL SSLSocketFactory sslSocketFactory,
+                                      HttpLoggingInterceptor httpLoggingInterceptor) {
         /**
          * 1. 设置连接超时时间
          * 2. 设置读取超时时间
@@ -214,7 +222,7 @@ public class ApiBaseServerModule {
          * 7. 设置失败后是否从新连接
          */
 
-        return new OkHttpClient.Builder()
+        OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .connectTimeout(LazyConfig.get().getConnTimeout(), TimeUnit.SECONDS)
                 .readTimeout(LazyConfig.get().getReadTimeout(), TimeUnit.SECONDS)
                 .writeTimeout(LazyConfig.get().getWriteTimeout(), TimeUnit.SECONDS)
@@ -222,15 +230,40 @@ public class ApiBaseServerModule {
                 .addNetworkInterceptor(noNetWorkInterceptor)
                 .addInterceptor(httpLoggingInterceptor)
                 .cache(cache)
-                .retryOnConnectionFailure(LazyConfig.get().isHttpRetry())
-                .sslSocketFactory(sslSocketFactory)
-                .hostnameVerifier(new HostnameVerifier() {
+                .retryOnConnectionFailure(LazyConfig.get().isHttpRetry());
+
+        if (LazyConfig.get().isIgnoreAllSSL()) {
+            builder.sslSocketFactory(sslSocketFactory);
+        } else {
+            if (LazyConfig.get().getCertificates() != null && LazyConfig.get().getCertificates().length > 0) {
+                builder.sslSocketFactory(LazyHttpsFactory.getSSLSocketFactory(context, LazyConfig.get().getCertificates()));
+            } else {
+                builder.sslSocketFactory(sslSocketFactory);
+            }
+        }
+
+        if (LazyConfig.get().isReceiveAllHostname()) { // receive all hostname address
+            builder.hostnameVerifier(new HostnameVerifier() {
+                @Override
+                public boolean verify(String hostname, SSLSession session) {
+                    return true;
+                }
+            });
+        } else {
+            if (LazyConfig.get().getSupportHostnameArray() != null
+                    && LazyConfig.get().getSupportHostnameArray().length > 0) { // only receive support specified  hostname address
+                builder.hostnameVerifier(LazyHttpsFactory.getHostnameVerifier(LazyConfig.get().getSupportHostnameArray()));
+            } else {
+                builder.hostnameVerifier(new HostnameVerifier() {
                     @Override
                     public boolean verify(String hostname, SSLSession session) {
                         return true;
                     }
-                })
-                .build();
+                });
+            }
+        }
+
+        return builder.build();
     }
 
     /**

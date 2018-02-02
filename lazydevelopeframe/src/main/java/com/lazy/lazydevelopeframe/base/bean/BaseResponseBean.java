@@ -9,7 +9,7 @@ package com.lazy.lazydevelopeframe.base.bean;
  * </pre>
  */
 
-public class BaseResponseBean<T> {
+public class BaseResponseBean {
 
     private int code;
     private long sys_time;

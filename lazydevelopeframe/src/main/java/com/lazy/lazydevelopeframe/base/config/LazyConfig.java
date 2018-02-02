@@ -3,6 +3,8 @@ package com.lazy.lazydevelopeframe.base.config;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import java.util.Arrays;
+
 /**
  * <pre>
  *  author : liming
@@ -22,7 +24,13 @@ public class LazyConfig {
     private long readTimeout = 15;
     private long writeTimeout = 15;
     private boolean httpRetry = false;
+    private boolean ignoreAllSSL = false;
+    private boolean receiveAllHostname = true;
+    private String[] supportHostnameArray; // 支持的 hostname 数组
+    private int[] certificates; // 证书
     private int responseOk = 200;
+    private String sslProtocolType = "TLS"; // 证书协议类型
+    private String certificateType = "X.509"; // 证书类型
 
     private LazyConfig() {
     }
@@ -53,8 +61,38 @@ public class LazyConfig {
         return this;
     }
 
+    public LazyConfig setSSLProtocolType(String protocolType) {
+        this.sslProtocolType = protocolType;
+        return this;
+    }
+
+    public LazyConfig setCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+        return this;
+    }
+
     public LazyConfig setResponseOk(int responseOk) {
         this.responseOk = responseOk;
+        return this;
+    }
+
+    public LazyConfig setCertificates(int... certificate) {
+        this.certificates = certificate;
+        return this;
+    }
+
+    public LazyConfig setIgnoreAllSSL(boolean ignoreAllSSL) {
+        this.ignoreAllSSL = ignoreAllSSL;
+        return this;
+    }
+
+    public LazyConfig setReceiveAllHostname(boolean receiveAllHostname) {
+        this.receiveAllHostname = receiveAllHostname;
+        return this;
+    }
+
+    public LazyConfig setSupportHostnameArray(String... hostname) {
+        supportHostnameArray = hostname;
         return this;
     }
 
@@ -125,6 +163,30 @@ public class LazyConfig {
         return responseOk;
     }
 
+    public boolean isIgnoreAllSSL() {
+        return ignoreAllSSL;
+    }
+
+    public boolean isReceiveAllHostname() {
+        return receiveAllHostname;
+    }
+
+    public String[] getSupportHostnameArray() {
+        return supportHostnameArray;
+    }
+
+    public int[] getCertificates() {
+        return certificates;
+    }
+
+    public String getSslProtocolType() {
+        return sslProtocolType;
+    }
+
+    public String getCertificateType() {
+        return certificateType;
+    }
+
     public Context getContext() {
         if (context != null) {
             return context;
@@ -136,14 +198,21 @@ public class LazyConfig {
     @Override
     public String toString() {
         return "LazyConfig{" +
-                "baseHttpUrl='" + baseHttpUrl + '\'' +
+                "context=" + context +
+                ", baseHttpUrl='" + baseHttpUrl + '\'' +
                 ", cacheFileName='" + cacheFileName + '\'' +
                 ", cacheFileSize=" + cacheFileSize +
                 ", connTimeout=" + connTimeout +
                 ", readTimeout=" + readTimeout +
                 ", writeTimeout=" + writeTimeout +
                 ", httpRetry=" + httpRetry +
+                ", ignoreAllSSL=" + ignoreAllSSL +
+                ", receiveAllHostname=" + receiveAllHostname +
+                ", supportHostnameArray=" + Arrays.toString(supportHostnameArray) +
+                ", certificates=" + Arrays.toString(certificates) +
                 ", responseOk=" + responseOk +
+                ", sslProtocolType='" + sslProtocolType + '\'' +
+                ", certificateType='" + certificateType + '\'' +
                 '}';
     }
 }

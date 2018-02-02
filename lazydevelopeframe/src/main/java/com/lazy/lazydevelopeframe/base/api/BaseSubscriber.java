@@ -6,8 +6,7 @@ import com.lazy.lazydevelopeframe.base.bean.BaseResponseBean;
 import com.lazy.lazydevelopeframe.base.exception.LazyException;
 import com.lazy.lazydevelopeframe.base.exception.LazyThrowable;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
+import io.reactivex.subscribers.DisposableSubscriber;
 
 /**
  * <pre>
@@ -18,21 +17,13 @@ import org.reactivestreams.Subscription;
  * </pre>
  */
 
-public abstract class BaseSubscriber<T> implements Subscriber<T> {
+public abstract class BaseSubscriber<T> extends DisposableSubscriber<T> {
 
     protected Context mContext;
-
-    public BaseSubscriber(Context mContext) {
-        this.mContext = mContext;
-    }
 
     public BaseSubscriber() {
     }
 
-    @Override
-    public void onSubscribe(Subscription s) {
-        s.request(s.hashCode());
-    }
 
     @Override
     final public void onError(java.lang.Throwable t) {
@@ -52,7 +43,6 @@ public abstract class BaseSubscriber<T> implements Subscriber<T> {
 
     @Override
     public void onComplete() {
-
     }
 
     public abstract void onError(LazyThrowable throwable);

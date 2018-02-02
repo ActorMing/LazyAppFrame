@@ -21,7 +21,7 @@ public interface BaseContract {
         /**
          * 初始化
          */
-        void initialize();
+        void initInject();
 
         /**
          * 显示加载框
@@ -45,11 +45,6 @@ public interface BaseContract {
      * presenter接口基类
      */
     interface BaseContractPresenter {
-
-        /**
-         * 分离有关联的对象
-         */
-        void detach();
 
         /**
          * 添加到请求队列
