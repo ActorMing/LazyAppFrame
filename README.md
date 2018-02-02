@@ -31,7 +31,11 @@ android 快速开发框架
     // Retrofit 相关配置 (可自行选择配置或继续使用默认配置)
     LazyConfig.init()
                 .init(this)
-                .setBaseHttpUrl("http://www.wanandroid.com/tools/mockapi/") // 必须要进行设置的 baseUrl
+		/**
+		 * 必须要进行设置的 baseUrl 
+		 *  注:baseUrl 务必要以 '/' 结尾
+		 */
+                .setBaseHttpUrl("http://www.wanandroid.com/tools/mockapi/")
                 .setCacheFileName("cache_fileName.txt") // 缓存文件名称 (默认:okHttpCacheFile)
                 .setCacheFileSize(Long.valueOf(10 * 1024 * 1024)) // 缓存文件大小  (默认:10MB)
                 .setConnTimeout(15) // 连接超时时间  (默认:15s)
