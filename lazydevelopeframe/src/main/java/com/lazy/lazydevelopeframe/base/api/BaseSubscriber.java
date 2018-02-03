@@ -37,7 +37,11 @@ public abstract class BaseSubscriber<T> extends DisposableSubscriber<T> {
 
     @Override
     final public void onNext(T t) {
-        onNext(((BaseResponseBean) t).getCode(), ((BaseResponseBean) t).getMsg(), t);
+        try {
+            onNext(((BaseResponseBean) t).getCode(), ((BaseResponseBean) t).getMsg(), t);
+        } catch (Exception e) {
+            onNext(1, String.valueOf(t), t);
+        }
         onComplete();
     }
 

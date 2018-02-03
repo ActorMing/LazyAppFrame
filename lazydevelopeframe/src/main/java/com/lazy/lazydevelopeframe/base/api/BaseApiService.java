@@ -29,7 +29,13 @@ public interface BaseApiService {
     <T> Flowable<BaseResponseBean> get(@Url String url, @QueryMap HashMap<String, Object> maps);
 
     @GET()
+    <T> Flowable<String> getStringResult(@Url String url, @QueryMap HashMap<String, Object> maps);
+
+    @GET()
     <T> Flowable<BaseResponseBean> getEncoded(@Url String url, @QueryMap(encoded = true) HashMap<String, Object> maps);
+
+    @GET()
+    <T> Flowable<BaseResponseBean> getEncodedStringResult(@Url String url, @QueryMap(encoded = true) HashMap<String, Object> maps);
 
     @FormUrlEncoded
     @POST("{url}")
@@ -37,18 +43,38 @@ public interface BaseApiService {
 
     @FormUrlEncoded
     @POST("{url}")
+    <T> Flowable<BaseResponseBean> postFormStringResult(@Url String url, @FieldMap HashMap<String, Object> maps);
+
+    @FormUrlEncoded
+    @POST("{url}")
     <T> Flowable<BaseResponseBean> postFormEncoded(@Url String url, @FieldMap(encoded = true) HashMap<String, Object> maps);
+
+    @FormUrlEncoded
+    @POST("{url}")
+    <T> Flowable<BaseResponseBean> postFormEncodedStringResult(@Url String url, @FieldMap(encoded = true) HashMap<String, Object> maps);
 
     @DELETE()
     <T> Flowable<BaseResponseBean> delete(@Url String url, @QueryMap HashMap<String, Object> maps);
 
     @DELETE()
+    <T> Flowable<BaseResponseBean> deleteStringResult(@Url String url, @QueryMap HashMap<String, Object> maps);
+
+    @DELETE()
     <T> Flowable<BaseResponseBean> deleteEncoded(@Url String url, @QueryMap(encoded = true) HashMap<String, Object> maps);
+
+    @DELETE()
+    <T> Flowable<BaseResponseBean> deleteEncodedStringResult(@Url String url, @QueryMap(encoded = true) HashMap<String, Object> maps);
 
     @PUT()
     <T> Flowable<BaseResponseBean> put(@Url String url, @FieldMap HashMap<String, Object> maps);
 
     @PUT()
+    <T> Flowable<BaseResponseBean> putStringResult(@Url String url, @FieldMap HashMap<String, Object> maps);
+
+    @PUT()
     <T> Flowable<BaseResponseBean> putEncoded(@Url String url, @FieldMap(encoded = true) HashMap<String, Object> maps);
+
+    @PUT()
+    <T> Flowable<BaseResponseBean> putEncodedStringResult(@Url String url, @FieldMap(encoded = true) HashMap<String, Object> maps);
 
 }
