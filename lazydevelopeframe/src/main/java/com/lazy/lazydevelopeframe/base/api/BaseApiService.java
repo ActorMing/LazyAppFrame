@@ -20,6 +20,7 @@ import retrofit2.http.Url;
  *  time   : Created by on 2018/2/1.
  *  desc   : baseApiService
  *  modify : 基本的 api service
+ *              后续继续添加
  * </pre>
  */
 
