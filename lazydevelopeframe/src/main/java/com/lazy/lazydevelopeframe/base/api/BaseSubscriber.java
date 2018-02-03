@@ -42,7 +42,6 @@ public abstract class BaseSubscriber<T> extends DisposableSubscriber<T> {
         } catch (Exception e) {
             onNext(1, String.valueOf(t), t);
         }
-        onComplete();
     }
 
     @Override
