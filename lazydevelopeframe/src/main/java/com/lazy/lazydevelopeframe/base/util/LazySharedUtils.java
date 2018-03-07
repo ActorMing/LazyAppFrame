@@ -51,7 +51,6 @@ public class LazySharedUtils {
         if (preferences == null) {
             preferences = PreferenceManager.getDefaultSharedPreferences(LazyConfig.get().getContext());
         }
-
         if (editor == null) {
             editor = preferences.edit();
         }
