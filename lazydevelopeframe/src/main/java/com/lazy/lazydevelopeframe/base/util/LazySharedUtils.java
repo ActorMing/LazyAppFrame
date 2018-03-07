@@ -14,8 +14,7 @@ import java.util.Map;
  * <pre>
  *  author : liming
  *  time   : Created by on 2018/3/7.
- *  desc   : SharedPreferences 工具类
- *              所有的数据用 string 类型进行保存
+ *  desc   : SharedPreferences 工具类 <所有的数据用 string 类型进行保存>
  *  modify :
  * </pre>
  */
