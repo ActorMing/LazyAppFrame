@@ -82,7 +82,7 @@ dependencies {
 
     // RxTool
     // https://github.com/vondear/RxTools
-//    compile 'com.github.vondear:RxTools:v1.7.6.4'
+    compile 'com.github.vondear:RxTools:v1.7.6.4'
 
     // Alerter
     // https://github.com/Tapadoo/Alerter
