@@ -30,8 +30,10 @@ android 快速开发框架
      }
      
 #### 第三步.添加相关的权限
- <uses-permission android:name="android.permission.INTERNET" >
- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+<p>
+ <uses-permission android:name="android.permission.INTERNET" />
+ <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	</p>
 
 ### 在项目中的应用
 ##### 在Application中进行初始化
