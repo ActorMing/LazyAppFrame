@@ -28,6 +28,8 @@ android 快速开发框架
      dependencies {
      		compile 'com.github.ActorMing:LazyAppFrame:$lastestVersion'
      }
+     
+
 
 ### 在项目中的应用
 ##### 在Application中进行初始化
