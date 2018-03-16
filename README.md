@@ -27,6 +27,11 @@ android 快速开发框架
 	
      dependencies {
      		compile 'com.github.ActorMing:LazyAppFrame:$lastestVersion'
+		
+		// 引用 dagger2
+		compile 'com.google.dagger:dagger:2.14.1'
+                compile 'org.glassfish:javax.annotation:10.0-b28'
+                annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
      }
      
 
